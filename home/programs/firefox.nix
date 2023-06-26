@@ -6,7 +6,6 @@
   programs = {
     firefox = {
       enable = true;
-      profiles.ryan = {};
     };
   };
 }
