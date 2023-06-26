@@ -19,6 +19,6 @@ Entire system managed with a NixOS Flake :
     - Module name of import in `flake.nix`, which needs to follow previous hostname.
     - Username in `flake.nix`, `modules/system.nix` and `home/default.nix`.
     - Home dir in `home/default.nix`.
-- Symlink `hardware-configuration.nix` to the flake : `ln -s /etc/hardware-configuration.nix /path/to/flake/hosts/`
-- Now all that's left is to install ! Run `nixos-install --flake /path/to/flake/#your_hostname` and enjoy.
+- Overwrite `/mnt/path_to/flake/hosts/hardware-configuration.nix` in the flake with `/etc/hardware-configuration.nix`
+- Now all that's left is to install ! Run `nixos-install --impure --flake /path_to/flake/#your_hostname` and enjoy.
 
