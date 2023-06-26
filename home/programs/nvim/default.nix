@@ -2,6 +2,11 @@
 
 {
 
+  home.packages = with pkgs; [
+    gnumake
+    gcc
+  ];
+
   programs.neovim = {
   enable = true;
     extraPackages = with pkgs; [
