@@ -19,13 +19,12 @@ uptime="`uptime -p | sed -e 's/up //g'`"
 host=`hostname`
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=''
+reboot=''
+lock=''
+logout='󰗼'
+yes=''
+no=''
 
 # Rofi CMD
 rofi_cmd() {
@@ -44,7 +43,7 @@ confirm_cmd() {
 		-theme-str 'textbox {horizontal-align: 0.5;}' \
 		-dmenu \
 		-p 'Confirmation' \
-		-mesg 'Are you Sure?' \
+		-mesg 'Confirmation' \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -55,7 +54,7 @@ confirm_exit() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$shutdown\n$reboot\n$lock\n$logout" | rofi_cmd
 }
 
 # Execute Command
