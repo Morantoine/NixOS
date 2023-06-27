@@ -25,11 +25,14 @@
     # make Home Manager follow NixPkgs to avoir conflicts
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     # Spicetify flake for Nix integration
-    spicetify-nix.url = github:the-argus/spicetify-nix;
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
+		# Custom flake for managing alacritty themes
+		alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs = inputs@{
       self,
+			alacritty-theme,
       nixpkgs,
 			spicetify-nix,
       home-manager,
@@ -41,6 +44,12 @@
         system = "x86_64-linux";
 	# Load configuration
         modules = [
+
+					({config, pkgs, ...}: {
+					   # alacritty overlay for theming
+							 nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+					})
+
           ./hosts/nixos-antoine
 
 	  # Load Home Manager

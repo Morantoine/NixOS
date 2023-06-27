@@ -22,6 +22,7 @@ in
         italic.family = font;
         size = 11;
       };
+			import = [ pkgs.alacritty-theme.dracula ];
     };
   };
 }
