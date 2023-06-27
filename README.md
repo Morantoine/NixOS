@@ -10,7 +10,7 @@ Entire system managed with a NixOS Flake :
 
 ### How to install :
 
-- Do a barebone install of NixOS with your prefered method (check the ![installation guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)). You need to go at least as far as `nixos-generate-config --root /mnt` to generate the `hardware-configuration.nix` file. Please note that the host in this flake is a UEFI system, please adapt accordingly.
+- Do a barebone install of NixOS with your prefered method (check the [installation guide](https://nixos.wiki/wiki/NixOS_Installation_Guide)). You need to go at least as far as `nixos-generate-config --root /mnt` to generate the `hardware-configuration.nix` file. Please note that the host in this flake is a UEFI system, please adapt accordingly.
 
 - Clone this repo somewhere in `/mnt`.
 - Adapt the following variables to customize the flake to your system :
