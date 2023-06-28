@@ -8,6 +8,12 @@
   services.xserver = {
     enable = true;
 
+		# Enable SSH agent on boot
+		displayManager.sessionCommands = ''
+			eval $(gnome-keyring-daemon --daemonize)
+			export SSH_AUTH_SOCK
+'';
+
     desktopManager = {
       xterm.enable = false;
     };
@@ -40,5 +46,8 @@
     layout = "us";
     xkbVariant = "intl";
   };
+
+	# Keyring
+	services.gnome.gnome-keyring.enable = true;
 
 }
