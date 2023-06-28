@@ -7,6 +7,7 @@
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
   services.xserver = {
     enable = true;
+		updateDbusEnvironment = true;
 
 		# Enable SSH agent on boot
 		displayManager.sessionCommands = ''

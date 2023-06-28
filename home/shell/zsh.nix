@@ -39,10 +39,10 @@
       zstyle ':completion:*' verbose true
       _comp_options+=(globdots)
 
-      ${lib.optionalString config.services.gpg-agent.enable ''
-        gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)
-        export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/$gnupg_path/S.gpg-agent.ssh"
-      ''}
+      # ${lib.optionalString config.services.gpg-agent.enable ''
+      #   gnupg_path=$(ls $XDG_RUNTIME_DIR/gnupg)
+      #   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gnupg/$gnupg_path/S.gpg-agent.ssh"
+      # ''}
 
     '';
 

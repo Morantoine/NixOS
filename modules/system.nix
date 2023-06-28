@@ -89,7 +89,10 @@
   services.power-profiles-daemon = {
     enable = true;
   };
+
   security.polkit.enable = true;
+	# Auto-unlock of keyring
+	security.pam.services.gdm.enableGnomeKeyring = true;
 
   services = {
     dbus.packages = [ pkgs.gcr ];
