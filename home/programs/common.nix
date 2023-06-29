@@ -39,6 +39,7 @@
   ];
 
   programs = {
+
     tmux = {
       enable = true;
       clock24 = true;
@@ -83,4 +84,5 @@
     # auto mount usb drives
     udiskie.enable = true;
   };
+
 }

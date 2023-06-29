@@ -16,15 +16,32 @@
     executable = true;  # make all scripts executable
   };
 
-  
-    gtk = {
-        enable = true;
-	theme = {
-          name = "Materia-dark";
-	  package = pkgs.materia-theme;
-	};
-      };
-  
+	# Theming
 
+	gtk = {
+  	enable = true;
+  	gtk3.extraConfig = {
+    	gtk-application-prefer-dark-theme = true;
+  	};
+  	gtk4.extraConfig = {
+    	gtk-application-prefer-dark-theme = true;
+  	};
+		# cursorTheme = pkgs.quintom-cursor-theme;
+	};
+  
+	qt = {
+    enable = true;
+    platformTheme = "gnome";
+    style.package = pkgs.adwaita-qt;
+    style.name = "adwaita-dark";
+  };
+  
+	dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
+	home.sessionVariables.QT_QPA_PLATFORMTHEME = "gnome";
 
 }
