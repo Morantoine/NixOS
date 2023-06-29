@@ -40,6 +40,8 @@
         acpi                 # battery information
         arandr               # screen layout manager
         xbindkeys            # bind keys to commands
+				xclip 					     # basic x11 clipboard
+				flameshot						 # full screenshot utility
         xorg.xbacklight      # control screen brightness
      ];
     };
