@@ -30,6 +30,7 @@
 			  imagemagick          # for blurring the lock screen
         rofi             # application launcher, the same as dmenu
 	      dunst            # notification daemon
+				networkmanagerapplet # for network
         i3blocks         # status bar
         i3lock           # default i3 screen locker
         i3status         # provide information to i3bar
@@ -50,5 +51,6 @@
 
 	# Keyring
 	services.gnome.gnome-keyring.enable = true;
+	programs.seahorse.enable = true;
 
 }
