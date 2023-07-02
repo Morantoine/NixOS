@@ -74,7 +74,7 @@ run_cmd() {
 				openbox --exit
 			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
 				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
+			elif [[ "$DESKTOP_SESSION" == 'none+i3' ]]; then
 				i3-msg exit
 			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
 				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
@@ -95,10 +95,8 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
+		if [[ -x '/run/current-system/sw/bin/i3lock' ]]; then
+			~/.config/i3/scripts/blur-lock
 		fi
         ;;
     $suspend)
