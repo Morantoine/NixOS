@@ -5,6 +5,12 @@
 
   # i3 related options
   environment.pathsToLink = [ "/libexec" ]; # links /libexec from derivations to /run/current-system/sw
+
+	# theming for env-lauched apps
+	environment.variables = {
+		QT_STYLE_OVERRIDE = "adwaita-dark";
+	};
+
   services.xserver = {
     enable = true;
 		updateDbusEnvironment = true;

@@ -26,7 +26,6 @@
   	gtk4.extraConfig = {
     	gtk-application-prefer-dark-theme = true;
   	};
-		# cursorTheme = pkgs.quintom-cursor-theme;
 	};
   
 	qt = {
@@ -41,7 +40,5 @@
       color-scheme = "prefer-dark";
     };
   };
-
-	home.sessionVariables.QT_QPA_PLATFORMTHEME = "gnome";
 
 }
