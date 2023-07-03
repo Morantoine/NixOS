@@ -9,16 +9,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # If needed, extra options
-  # i18n.extraLocaleSettings = {
-  #   LC_MESSAGES = "en_US.UTF-8";
-  #   LC_TIME = "de_DE.UTF-8";
-  # }
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-  
-
+	# Fonts for system and TWM
   fonts = {
     fonts = with pkgs; [
       # icon fonts
@@ -36,8 +27,6 @@
     enableDefaultFonts = false;
 
     # user defined fonts
-    # the reason there's Noto Color Emoji everywhere is to override DejaVu's
-    # B&W emojis that would sometimes show instead of some Color emojis
     fontconfig.defaultFonts = {
       serif = [ "DejaVu Sans" ];
       sansSerif = [ "DejaVu Sans" ];
@@ -50,9 +39,7 @@
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
+	# No firwall for now, will switch when real install
   networking.firewall.enable = false;
 
   # Enable the OpenSSH daemon.
@@ -61,7 +48,7 @@
     settings = {
       X11Forwarding = true;
       PermitRootLogin = "yes";         # disable root login
-      PasswordAuthentication = true; # disable password login
+      PasswordAuthentication = false; # disable password login
     };
     openFirewall = true;
   };
@@ -76,9 +63,6 @@
     curl
     git
     sysstat
-    # Minimal screen capture tool, used by i3 blur lock to take a screenshot
-    # print screen key is also bound to this tool in i3 config
-    # Feel free to add something more complete in your DE/WM
     scrot
     neofetch
   ];
@@ -97,8 +81,6 @@
   services = {
     dbus.packages = [ pkgs.gcr ];
 
-		geoclue2.enable = true;
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -107,7 +89,6 @@
       jack.enable = true;
     };
 
-    # udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
   };
 
   # Change user and set a password !
