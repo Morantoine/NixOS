@@ -10,6 +10,6 @@
     ./media.nix
     ./xdg.nix
     ./nvim
-     ./spotify.nix
+    ./spotify.nix
   ];
 }
