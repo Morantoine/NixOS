@@ -4,7 +4,7 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = ".config.zsh";
+    dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
@@ -13,7 +13,7 @@
       rg = "source ranger";
     };
     history = {
-      path = "${config.xdg.dataHome}/zsh/.zshistory";
+      path = "${config.home.homeDirectory}/.zshistory";
       save = 10000;
       share = true;
     };
@@ -46,5 +46,15 @@
     enable = true;
     enableZshIntegration = true;
   };
+
+	programs.skim = {
+		enable = true;
+		enableZshIntegration = true;
+		defaultCommand = "rg --files --hidden";
+		changeDirWidgetOptions = [
+			"--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
+			"--exact"
+		];
+	};
 
 }
