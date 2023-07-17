@@ -2,7 +2,7 @@
   description = "Antoine's Nix/NixOS config";
 
   nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
+    extra-experimental-features = [ "nix-command" "flakes" ];
     substituters = [
       "https://cache.nixos.org/"
     ];
