@@ -10,6 +10,9 @@ font Hack 10
 # Set the mod key to the Winkey:
 set $mod Mod4
 
+# Align text of upper bar
+title_align center
+
 # default i3 tiling mode:
 workspace_layout default
 
@@ -175,11 +178,11 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggleflame
+bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+g layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
