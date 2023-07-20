@@ -42,25 +42,27 @@
       # My hostname, don't forget to change it !
       nixos-antoine = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	# Load configuration
+				# Load configuration
         modules = [
 
 					({config, pkgs, ...}: {
 					   # alacritty overlay for theming
-							 nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+						 nixpkgs.overlays = [ alacritty-theme.overlays.default ];
 					})
 
           ./hosts/nixos-antoine
 
-	  # Load Home Manager
+					# Load Home Manager
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
 		
-	    # Change the username !
+						# Change the username !
             home-manager.extraSpecialArgs = inputs;
             home-manager.users.antoine = import ./home;
+
+
           }
         ];
       };
