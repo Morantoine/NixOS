@@ -27,7 +27,8 @@
     # python
 		(python310.withPackages(ps: with ps; [
 		  python-dbusmock # Music in i3blocks
-			]))
+			pygobject3
+		]))
 
     # Rust
     rustc

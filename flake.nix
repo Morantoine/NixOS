@@ -40,7 +40,7 @@
   }: {
     nixosConfigurations = {
       # My hostname, don't forget to change it !
-      nixos-antoine = nixpkgs.lib.nixosSystem {
+      balrog = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 				# Load configuration
         modules = [
@@ -50,7 +50,7 @@
 						 nixpkgs.overlays = [ alacritty-theme.overlays.default ];
 					})
 
-          ./hosts/nixos-antoine
+          ./hosts/balrog
 
 					# Load Home Manager
           home-manager.nixosModules.home-manager

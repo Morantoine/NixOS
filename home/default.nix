@@ -3,8 +3,8 @@
 {
 
   imports = [
-    ./i3
-    ./picom
+    ./hyprland
+    ./waybar
     ./programs
     ./rofi
     ./shell

@@ -8,7 +8,7 @@
   imports =
     [
       ../../modules/system.nix
-      ../../modules/i3.nix
+      ../../modules/hyprland.nix
 
       # Include the results of the hardware scan.
       ../hardware-configuration.nix
@@ -27,7 +27,7 @@
     };
   };
 
-  networking.hostName = "nixos-antoine"; # Change your hostname.
+  networking.hostName = "balrog"; # Change your hostname.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

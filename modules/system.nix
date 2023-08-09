@@ -60,6 +60,7 @@
   environment.systemPackages = with pkgs; [
     vim # Anything but Nano please
     wget
+		killall
     curl
     git
     sysstat
