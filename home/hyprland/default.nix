@@ -36,4 +36,11 @@
       color-scheme = "prefer-dark";
     };
   };
+
+	home.pointerCursor = {
+		name = "phinger-cursors";
+		package = pkgs.phinger-cursors;
+		size = 24;
+		gtk.enable = true;
+	};
 }
