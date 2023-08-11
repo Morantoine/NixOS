@@ -14,12 +14,6 @@
 			enable = true;
 			wayland = true;
 		};
-
-		# Enable SSH agent on boot
-		displayManager.sessionCommands = ''
-			eval $(gnome-keyring-daemon --start)
-			export SSH_AUTH_SOCK
-		'';
 	};
 
 	programs.hyprland = {
