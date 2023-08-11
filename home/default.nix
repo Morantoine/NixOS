@@ -4,7 +4,6 @@
 
   imports = [
     ./hyprland
-		./gnome_keyring
     ./waybar
     ./programs
     ./rofi
