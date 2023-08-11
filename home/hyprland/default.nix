@@ -5,6 +5,7 @@
 }: {
 
 	home.file.".config/hypr/hyprland.conf".source = ./config;
+	home.file.".wallpaper.jpg".source = ../../wallpaper.jpg;
 
   home.packages = with pkgs; [
 		rofi-wayland-unwrapped

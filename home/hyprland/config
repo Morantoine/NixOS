@@ -13,9 +13,11 @@ xwayland {
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
-exec-once = swaybg -m fill -i /flake/wallpaper.jpg
+exec-once = swaybg -m fill -i ~/.wallpaper.jpg
+exec-once = ~/.config/ssh-auto-sock.sh
 exec-once = waybar
 exec-once = nm-applet
+exec-once = blueman-applet
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -46,7 +48,7 @@ general {
     gaps_in = 5
     gaps_out = 5
     border_size = 2
-    col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
+    col.active_border = rgba(33ccffee) #rgba(00ff99ee) 45deg
     col.inactive_border = rgba(595959aa)
 
     layout = dwindle
@@ -126,6 +128,7 @@ bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidme
 bind = $mainMod SHIFT, E, exec, ~/.config/rofi/configs/powermenu.sh
 bind = $mainMod, F, fullscreen
 bind = $mainMod, U,exec,togglegroup
+bind = $mainMod, L, exec, swaylock --font-size 70 --indicator-radius 100 -i ~/.wallpaper.jpg
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l

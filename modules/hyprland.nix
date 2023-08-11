@@ -14,6 +14,12 @@
 			enable = true;
 			wayland = true;
 		};
+
+		# Enable SSH agent on boot
+		displayManager.sessionCommands = ''
+			eval $(gnome-keyring-daemon --start)
+			export SSH_AUTH_SOCK
+		'';
 	};
 
 	programs.hyprland = {
@@ -30,9 +36,14 @@
 	};
 
   environment.systemPackages = with pkgs; [
-		swww
 		swaybg
+		swaylock
+		wl-clipboard
+		mako
   ];
+
+	# Fix locking problem
+	security.pam.services.swaylock = {};
 
 	# Keyring
 	services.gnome.gnome-keyring.enable = true;
