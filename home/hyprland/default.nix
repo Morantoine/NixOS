@@ -13,6 +13,7 @@
 		grim
 		slurp
 		lxappearance
+		minecraft
   ];
 
 	gtk = {

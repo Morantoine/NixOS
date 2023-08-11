@@ -11,7 +11,7 @@
 
 	# Fonts for system and TWM
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       # icon fonts
       material-design-icons
 
@@ -24,7 +24,7 @@
     ];
 
     # use fonts specified by user rather than default ones
-    enableDefaultFonts = false;
+    enableDefaultPackages = false;
 
     # user defined fonts
     fontconfig.defaultFonts = {
