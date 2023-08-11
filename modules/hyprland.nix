@@ -31,9 +31,10 @@
 
   environment.systemPackages = with pkgs; [
 		swaybg
+		mako
+		libnotify
 		swaylock
 		wl-clipboard
-		mako
   ];
 
 	# Fix locking problem

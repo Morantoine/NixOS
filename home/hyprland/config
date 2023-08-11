@@ -17,6 +17,7 @@ exec-once = swaybg -m fill -i ~/.wallpaper.jpg
 exec-once = ~/.config/ssh-auto-sock.sh
 exec-once = waybar
 exec-once = nm-applet
+exec-once = mako
 exec-once = blueman-applet
 
 # Source a file (multi-file configs)
@@ -130,7 +131,6 @@ bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidme
 bind = $mainMod SHIFT, E, exec, ~/.config/rofi/configs/powermenu.sh
 bind = $mainMod, F, fullscreen
 bind = $mainMod, U,exec,togglegroup
-bind = $mainMod, L, exec, swaylock --font-size 70 --indicator-radius 100 -i ~/.wallpaper.jpg
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
@@ -176,6 +176,6 @@ bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
 # Screenshots
-bind = , Print, exec, grim /tmp/$(date +'%s_grim.png')
+bind = , Print, exec, grim /tmp/$(date +'%s_grim.png') && notify-send "Screenshot saved"
 bind = CTRL, Print, exec, grim -g "$(slurp -o)" /tmp/$(date +'%s_grim.png')
 bind = CTRL SHIFT, Print, exec, grim -g "$(slurp)" /tmp/$(date +'%s_grim.png')

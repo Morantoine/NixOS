@@ -9,6 +9,7 @@
     # utils
     ripgrep
     ranger
+		neofetch
     gotop
 
     # misc
