@@ -1,5 +1,14 @@
-{pkgs, ...}: {
+{pkgs, ...}:
 
+		let signal-desktop = pkgs.signal-desktop.overrideAttrs (oldAttrs: rec {
+		preFixup = oldAttrs.preFixup + ''
+				gappsWrapperArgs+=(
+						--add-flags "--use-tray-icon"
+				)
+		'';
+		});
+
+		in {
 
   home.packages = with pkgs; [
     # archives
@@ -25,6 +34,9 @@
     signal-desktop
     telegram-desktop
     discord
+
+		# passwords
+		bitwarden
 
     # python
 		(python310.withPackages(ps: with ps; [
