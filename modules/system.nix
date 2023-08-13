@@ -18,7 +18,9 @@
       # normal fonts
       hack-font
       noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
       noto-fonts-emoji
+      noto-fonts-extra
 
       # nerdfonts
       (nerdfonts.override { fonts = [ "Hack" ]; })

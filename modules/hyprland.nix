@@ -35,6 +35,7 @@
 		libnotify
 		swaylock
 		wl-clipboard
+		wl-clip-persist
   ];
 
 	# Fix locking problem

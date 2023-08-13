@@ -19,6 +19,7 @@ exec-once = waybar
 exec-once = nm-applet
 exec-once = mako -c ~/.config/mako
 exec-once = blueman-applet
+exec-once =	wl-clip-persist --clipboard both
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -49,10 +50,10 @@ general {
     gaps_in = 5
     gaps_out = 5
     border_size = 2
-    col.active_border = rgba(33ccffee) #rgba(00ff99ee) 45deg
+    col.active_border = rgba(33ccffee) rgba(2041e6ee) 45deg
     col.inactive_border = rgba(595959aa)
 
-    col.group_border_active = rgba(33ccffee) #rgba(00ff99ee) 45deg
+    col.group_border_active = rgba(33ccffee) rgba(2041e6ee) 45deg
     col.group_border = rgba(595959aa)
 
     layout = dwindle
@@ -75,6 +76,10 @@ decoration {
     shadow_range = 4
     shadow_render_power = 3
     col.shadow = rgba(1a1a1aee)
+}
+
+misc {
+	render_titles_in_groupbar = false
 }
 
 animations {
