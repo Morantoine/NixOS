@@ -33,6 +33,7 @@
     }
   },
   "wlr/workspaces": {
+    "on-click": "activate",
     "sort-by-number": true
   },
   "sway/mode": {
@@ -157,12 +158,13 @@
     "tooltip": false
   },
   "custom/spotify": {
-    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl -p spotify -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "format": "{}  ",
     "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "on-double-click": "playerctl next",
-    "on-triple-click": "playerctl previous",
+    "on-click": "playerctl -p spotify play-pause",
+    "on-double-click": "playerctl -p spotify next",
+    "on-triple-click": "playerctl -p spotify previous && playerctl -p spotify previous",
+    "on-scroll-up": "hyprctl dispatch focuswindow Spotify",
     "tooltip": false
   },
   "disk": {

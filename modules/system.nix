@@ -17,6 +17,7 @@
 
       # normal fonts
       hack-font
+      noto-fonts-cjk-serif
       noto-fonts-emoji
 
       # nerdfonts

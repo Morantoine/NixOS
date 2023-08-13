@@ -17,7 +17,7 @@ exec-once = swaybg -m fill -i ~/.wallpaper.jpg
 exec-once = ~/.config/ssh-auto-sock.sh
 exec-once = waybar
 exec-once = nm-applet
-exec-once = mako
+exec-once = mako -c ~/.config/mako
 exec-once = blueman-applet
 
 # Source a file (multi-file configs)
@@ -51,6 +51,9 @@ general {
     border_size = 2
     col.active_border = rgba(33ccffee) #rgba(00ff99ee) 45deg
     col.inactive_border = rgba(595959aa)
+
+    col.group_border_active = rgba(33ccffee) #rgba(00ff99ee) 45deg
+    col.group_border = rgba(595959aa)
 
     layout = dwindle
 }
@@ -130,7 +133,12 @@ bind = $mainMod, V, togglefloating,
 bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidmenu.conf
 bind = $mainMod SHIFT, E, exec, ~/.config/rofi/configs/powermenu.sh
 bind = $mainMod, F, fullscreen
-bind = $mainMod, U,exec,togglegroup
+
+# Tabbed layout
+bind = $mainMod, W, togglegroup,
+bind = $mainMod, Z, changegroupactive, b
+bind = $mainMod, X, changegroupactive, f
+bind = $mainMod SHIFT, W, moveoutofgroup
 
 # Move focus with mainMod + arrow keys
 bind = $mainMod, left, movefocus, l
@@ -163,19 +171,25 @@ bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
 # Scroll through existing workspaces with mainMod + scroll
-bind = $mainMod, mouse_down, workspace, e+1
-bind = $mainMod, mouse_up, workspace, e-1
+bind = $mainMod, Tab, workspace, e+1
 
-# Move/resize windows with mainMod + LMB/RMB and dragging
+# Move/resize windows with keyboard
 bind = $mainMod SHIFT, left, movewindow, l
 bind = $mainMod SHIFT, right, movewindow, r
 bind = $mainMod SHIFT, up, movewindow, u
 bind = $mainMod SHIFT, down, movewindow, d
 
+bind = $mainMod ALT, right, resizeactive, 10 0
+bind = $mainMod ALT, left, resizeactive, -10 0
+bind = $mainMod ALT, up, resizeactive, 0 -10
+bind = $mainMod ALT, down, resizeactive, 0 10
+
+# Move/resize windows with mouse
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
+
 # Screenshots
 bind = , Print, exec, grim /tmp/$(date +'%s_grim.png') && notify-send "Screenshot saved"
-bind = CTRL, Print, exec, grim -g "$(slurp -o)" /tmp/$(date +'%s_grim.png')
+bind = CTRL, Print, exec, grim -g "$(slurp -o)" - | wl-copy && notify-send "Screenshot copied to clipboard"
 bind = CTRL SHIFT, Print, exec, grim -g "$(slurp)" /tmp/$(date +'%s_grim.png')

@@ -9,6 +9,7 @@
     # utils
     ripgrep
     ranger
+		gimp
 		neofetch
     gotop
 
@@ -36,6 +37,9 @@
     cargo
     rustfmt
     rust-analyzer
+
+		# latex
+		texlive.combined.scheme-full 
 
   ];
 

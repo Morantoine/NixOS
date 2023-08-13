@@ -6,6 +6,7 @@
 
 	home.file.".config/hypr/hyprland.conf".source = ./config;
 	home.file.".wallpaper.jpg".source = ../../wallpaper.jpg;
+	home.file.".config/mako".source = ./mako_config;
 
   home.packages = with pkgs; [
 		rofi-wayland-unwrapped

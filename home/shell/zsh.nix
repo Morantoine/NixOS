@@ -2,14 +2,17 @@
 
 {
 
+	programs.exa.enable = true;
+
   programs.zsh = {
     enable = true;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
-      l = "ls -l";
-      ll = "ls -la";
+      l = "exa --icons";
+      ll = "exa --icons -l";
+      la = "exa --icons -la";
       rg = "source ranger";
     };
     history = {

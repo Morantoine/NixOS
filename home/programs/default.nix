@@ -11,5 +11,6 @@
     ./xdg.nix
     ./nvim
     ./spotify.nix
+		# ./signal.nix
   ];
 }

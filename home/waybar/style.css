@@ -51,6 +51,12 @@ button {
 
 #workspaces button.urgent {
   background-color: #eb4d4b;
+  border-radius: inherit;
+}
+
+#workspaces button:hover {
+  background: inherit;
+  border-radius: inherit;
 }
 
 #mode {
