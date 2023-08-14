@@ -31,9 +31,6 @@ exec-once =	wl-clip-persist --clipboard both
 input {
     kb_layout = es
     kb_variant =
-    kb_model =
-    kb_options =
-    kb_rules =
 
     follow_mouse = 1
 
@@ -139,6 +136,17 @@ bind = $mainMod, V, togglefloating,
 bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidmenu.conf
 bind = $mainMod SHIFT, E, exec, ~/.config/rofi/configs/powermenu.sh
 bind = $mainMod, F, fullscreen
+
+# Fn keys
+bind = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
+bind = ,XF86AudioLowerVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ -5%
+bind = ,XF86AudioMute, exec, pactl set-sink-mute @DEFAULT_SINK@ toggle
+bind = ,XF86AudioMicMute, exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bind = ,XF86MonBrightnessDown, exec, brightnessctl set 5%-
+bind = ,XF86MonBrightnessUp, exec, brightnessctl set 5%+
+bind = ,XF86AudioPlay, exec, playerctl play-pause
+bind = ,XF86AudioNext, exec, playerctl next
+bind = ,XF86AudioPrev, exec, playerctl previous
 
 # Tabbed layout
 bind = $mainMod, W, togglegroup,

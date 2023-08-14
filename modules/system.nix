@@ -105,8 +105,6 @@
 	hardware.bluetooth.enable = true;
 	services.blueman.enable = true;
 
-	# Enable bluetooth buttons support
-	systemd.user.services.mpris-proxy.enable = true;
 
   # Change user and set a password !
   users.users.antoine = {
