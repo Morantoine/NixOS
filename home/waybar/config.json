@@ -5,6 +5,7 @@
   // "width": 1280, // Waybar width
   "spacing": 0, // Gaps between modules (4px)
   "margin-bottom": 4,
+  "margin-left": 4,
   "margin-right": 4,
   // Choose the order of the modules
   "modules-left": ["wlr/workspaces", "custom/dnd"],
@@ -140,15 +141,15 @@
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format-bluetooth": "{volume}% ",
+    "format-bluetooth-muted": "󰂲",
+    "format-muted": "󰝟",
     // "format-source": "{volume}% ",
     // "format-source-muted": "",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -159,12 +160,13 @@
   },
   "custom/spotify": {
     "exec": "playerctl -p spotify -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-    "format": "{}  ",
+    "format": "  {}",
     "return-type": "json",
     "on-click": "playerctl -p spotify play-pause",
     "on-double-click": "playerctl -p spotify next",
     "on-triple-click": "playerctl -p spotify previous && playerctl -p spotify previous",
     "on-scroll-up": "hyprctl dispatch focuswindow Spotify",
+    "max-length": 45,
     "tooltip": false
   },
   "disk": {
