@@ -36,8 +36,12 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-	# Enable flake support
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.settings = {
+		# Enable flake support
+		experimental-features = [ "nix-command" "flakes" ];
+		# Optimise store
+		auto-optimise-store = true;
+	};
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
