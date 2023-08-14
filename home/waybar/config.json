@@ -7,7 +7,7 @@
   "margin-bottom": 4,
   "margin-right": 4,
   // Choose the order of the modules
-  "modules-left": ["wlr/workspaces", "keyboard-state"],
+  "modules-left": ["wlr/workspaces", "custom/dnd"],
   "modules-center": ["custom/spotify"],
   "modules-right": [
     "pulseaudio",
@@ -170,5 +170,18 @@
   "disk": {
     "interval": 30,
     "format": "{percentage_free}% 󰨣"
+  },
+  "custom/dnd": {
+    "interval": "once",
+    "return-type": "json",
+    "format": "{}{icon}",
+    "format-icons": {
+      "default": "󰭹",
+      "dnd": "󱐑"
+    },
+    "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
+    "on-click-right": "makoctl restore",
+    "exec": "printf '{\"alt\":\"%s\",\"tooltip\":\"mode: %s\"}' $(makoctl mode | grep -q 'do-not-disturb' && echo dnd || echo default) $(makoctl mode | tail -1)",
+    "signal": 11
   }
 }
