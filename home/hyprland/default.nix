@@ -9,12 +9,17 @@
 	home.file.".config/mako".source = ./mako_config;
 
   home.packages = with pkgs; [
+		# App launcher
 		rofi-wayland-unwrapped
+		# Network applet
 		networkmanagerapplet
+
+		# Screenshot / screen record
 		grim
 		slurp
+		kooha
+
 		lxappearance
-		minecraft
   ];
 
 	gtk = {
