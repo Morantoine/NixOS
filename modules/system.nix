@@ -9,7 +9,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-	# Fonts for system and TWM
+  # Fonts for system and TWM
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -35,10 +35,10 @@
       # sansSerif = [ "DejaVu Sans" ];
       # monospace = [ "DejaVu Sans" ];
       # emoji = [ "Noto Color Emoji" ];
-      serif = [];
-      sansSerif = [];
-      monospace = [];
-      emoji = [];
+      serif = [ ];
+      sansSerif = [ ];
+      monospace = [ ];
+      emoji = [ ];
     };
   };
 
@@ -46,7 +46,7 @@
   programs.zsh.enable = true;
   programs.dconf.enable = true;
 
-	# No firwall for now, will switch when real install
+  # No firwall for now, will switch when real install
   networking.firewall.enable = false;
 
   # Enable the OpenSSH daemon.
@@ -54,7 +54,7 @@
     enable = true;
     settings = {
       X11Forwarding = true;
-      PermitRootLogin = "yes";         # disable root login
+      PermitRootLogin = "yes"; # disable root login
       PasswordAuthentication = false; # disable password login
     };
     openFirewall = true;
@@ -67,7 +67,7 @@
   environment.systemPackages = with pkgs; [
     vim # Anything but Nano please
     wget
-		killall
+    killall
     curl
     git
     sysstat
@@ -78,19 +78,19 @@
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio = {
-		enable = false;
-		extraConfig = "
+    enable = false;
+    extraConfig = "
   		load-module module-switch-on-connect
 		";
-	};
+  };
 
   services.power-profiles-daemon = {
     enable = true;
   };
 
   security.polkit.enable = true;
-	# Auto-unlock of keyring
-	security.pam.services.gdm.enableGnomeKeyring = true;
+  # Auto-unlock of keyring
+  security.pam.services.gdm.enableGnomeKeyring = true;
 
   services = {
     dbus.packages = [ pkgs.gcr ];
@@ -105,9 +105,9 @@
 
   };
 
-	# Enable bluetooth
-	hardware.bluetooth.enable = true;
-	services.blueman.enable = true;
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
 
   # Change user and set a password !
@@ -122,11 +122,11 @@
     ];
   };
 
-	# Auto-cleaning
-	nix.gc = {
-		automatic = true;
-		dates = "weekly";
-		options = "--delete-older-than 30d";
-	};
+  # Auto-cleaning
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
 }

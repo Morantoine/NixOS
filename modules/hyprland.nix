@@ -1,56 +1,56 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 
 {
 
-	hardware = {
-		opengl.enable = true;
-		nvidia.modesetting.enable = true;
-	};
+  hardware = {
+    opengl.enable = true;
+    nvidia.modesetting.enable = true;
+  };
 
   services.xserver = {
-  		enable = true;
-		displayManager.gdm = {
-			enable = true;
-			wayland = true;
-		};
-	};
+    enable = true;
+    displayManager.gdm = {
+      enable = true;
+      wayland = true;
+    };
+  };
 
-	programs.hyprland = {
-			enable = true;
-			xwayland.enable = true;
-			nvidiaPatches = true;
-	};
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    nvidiaPatches = true;
+  };
 
-	programs.waybar = {
-		enable = true;
-		package = pkgs.waybar.overrideAttrs (oldAttrs: {
-			 mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-		});
-	};
+  programs.waybar = {
+    enable = true;
+    package = pkgs.waybar.overrideAttrs (oldAttrs: {
+      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    });
+  };
 
   environment.systemPackages = with pkgs; [
-		swaybg
-		mako
-		libnotify
-		swaylock
-		wl-clipboard
-		wl-clip-persist
-		# Pulseaudio to expose pactl
-		pulseaudio
+    swaybg
+    mako
+    libnotify
+    swaylock
+    wl-clipboard
+    wl-clip-persist
+    # Pulseaudio to expose pactl
+    pulseaudio
   ];
 
-	# Fix locking problem
-	security.pam.services.swaylock = {};
+  # Fix locking problem
+  security.pam.services.swaylock = { };
 
-	# Keyring
-	services.gnome.gnome-keyring.enable = true;
-	programs.seahorse.enable = true;
-	
-	programs.steam = {
-	  enable = true;
-	  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-	  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-	};
+  # Keyring
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
 }

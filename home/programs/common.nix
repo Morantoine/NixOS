@@ -1,14 +1,16 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
-		let signal-desktop = pkgs.signal-desktop.overrideAttrs (oldAttrs: rec {
-		preFixup = oldAttrs.preFixup + ''
-				gappsWrapperArgs+=(
-						--add-flags "--use-tray-icon"
-				)
-		'';
-		});
+let
+  signal-desktop = pkgs.signal-desktop.overrideAttrs (oldAttrs: rec {
+    preFixup = oldAttrs.preFixup + ''
+      				gappsWrapperArgs+=(
+      						--add-flags "--use-tray-icon"
+      				)
+      		'';
+  });
 
-		in {
+in
+{
 
   home.packages = with pkgs; [
     # archives
@@ -18,16 +20,16 @@
     # utils
     ripgrep
     ranger
-		gimp
-		evince
-		neofetch
+    gimp
+    evince
+    neofetch
     gotop
 
     # misc
     xdg-utils
     graphviz
     nodejs
-		emote
+    emote
 
     # productivity
     obsidian
@@ -37,16 +39,16 @@
     telegram-desktop
     discord
 
-		# passwords
-		bitwarden
-		otpclient
-		veracrypt
+    # passwords
+    bitwarden
+    otpclient
+    veracrypt
 
     # python
-		(python310.withPackages(ps: with ps; [
-		  python-dbusmock # Music in i3blocks
-			pygobject3
-		]))
+    (python310.withPackages (ps: with ps; [
+      python-dbusmock # Music in i3blocks
+      pygobject3
+    ]))
 
     # Rust
     rustc
@@ -54,8 +56,8 @@
     rustfmt
     rust-analyzer
 
-		# latex
-		texlive.combined.scheme-full 
+    # latex
+    texlive.combined.scheme-full
 
   ];
 

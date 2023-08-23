@@ -1,7 +1,6 @@
-{
-  config,
-  pkgs,
-  ...
+{ config
+, pkgs
+, ...
 }: {
   imports = [
     ./firefox.nix
@@ -11,6 +10,6 @@
     ./xdg.nix
     ./nvim
     ./spotify.nix
-		# ./signal.nix
+    # ./signal.nix
   ];
 }

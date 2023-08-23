@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }: {
 
   imports = [
     ./zsh.nix
@@ -12,7 +12,7 @@
     EDITOR = "nvim";
     BROWSER = "firefox";
     TERMINAL = "alacritty";
-		SSH_AUTH_SOCK= "/run/user/1000/keyring/ssh";
+    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
   };
 
 }

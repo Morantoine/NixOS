@@ -1,18 +1,17 @@
-{
-  pkgs,
-  ...
+{ pkgs
+, ...
 }: {
-  home.packages = [pkgs.gh];
+  home.packages = [ pkgs.gh ];
 
   programs.git = {
     enable = true;
-		package = pkgs.gitAndTools.gitFull;
+    package = pkgs.gitAndTools.gitFull;
 
     userName = "Morantoine";
     userEmail = "71721545+Morantoine@users.noreply.github.com";
 
-		aliases = {
-			adog = "log --all --decorate --oneline --graph";
-		};
+    aliases = {
+      adog = "log --all --decorate --oneline --graph";
+    };
   };
 }

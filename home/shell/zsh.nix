@@ -2,7 +2,7 @@
 
 {
 
-	programs.exa.enable = true;
+  programs.exa.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -13,7 +13,7 @@
       l = "exa --icons";
       ll = "exa --icons -l";
       la = "exa --icons -la";
-			tree = "exa --tree";
+      tree = "exa --tree";
       rg = "source ranger";
     };
     history = {
@@ -51,14 +51,14 @@
     enableZshIntegration = true;
   };
 
-	programs.skim = {
-		enable = true;
-		enableZshIntegration = true;
-		defaultCommand = "rg --files --hidden";
-		changeDirWidgetOptions = [
-			"--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
-			"--exact"
-		];
-	};
+  programs.skim = {
+    enable = true;
+    enableZshIntegration = true;
+    defaultCommand = "rg --files --hidden";
+    changeDirWidgetOptions = [
+      "--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
+      "--exact"
+    ];
+  };
 
 }

@@ -3,7 +3,8 @@
 {
 
   imports = [
-		./hyprland
+    ./hyprland
+    ./gtk.nix
     ./waybar
     ./programs
     ./rofi

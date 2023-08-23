@@ -1,7 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
+{ pkgs
+, config
+, ...
 }: {
 
   # Automatically copy wallpaper and config files
@@ -13,32 +12,7 @@
     source = ./scripts;
     # copy the scripts directory recursively
     recursive = true;
-    executable = true;  # make all scripts executable
-  };
-
-	# Theming
-
-	gtk = {
-  	enable = true;
-  	gtk3.extraConfig = {
-    	gtk-application-prefer-dark-theme = true;
-  	};
-  	gtk4.extraConfig = {
-    	gtk-application-prefer-dark-theme = true;
-  	};
-	};
-  
-	qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style.package = pkgs.adwaita-qt;
-    style.name = "adwaita-dark";
-  };
-  
-	dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
+    executable = true; # make all scripts executable
   };
 
 }

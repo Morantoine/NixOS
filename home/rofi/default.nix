@@ -1,7 +1,6 @@
-{
-  pkgs,
-  config,
-  ...
+{ pkgs
+, config
+, ...
 }: {
   # Make a copy of the rofi configs
   home.file.".config/rofi/configs" = {

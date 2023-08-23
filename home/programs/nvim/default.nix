@@ -8,7 +8,7 @@
   ];
 
   programs.neovim = {
-  enable = true;
+    enable = true;
     extraPackages = with pkgs; [
       # Optional dependency for telescope
       gnumake
