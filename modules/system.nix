@@ -116,10 +116,6 @@
     description = "antoine";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
-    # Change the ssh key !
-    openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3lIDx9z7aXEhtl/BmDaoM47TMFVbQb75IHGYEaS1v6gJIH64ZrtE2iLvekU7P9BJMEuX/fJPyRUxbKVOoA9VbFFM20i8PYCORY2r/AZjsbbkrj0RyOQfgmlgQvB+EyR8Sv/HG9qCy/N2MWILn5Dpx/1EajpXTbEQcjS9ZAdj1uRGraOwZimvlTZyWqUrlfEukhj3f13/rzOF3QRmJutW/51KoDiXCOp0p0VkQTWS5QaEEu2aBdze9JigXmgBOX041UidEM8nGXiAFim82O/03GWWsKIuW0xjvvQ0DHXIZw94xFXOhog9JASo44abhYLI6kCFGrSt7BZpuveOZCVPAXRTXo1bSmBeD7+IYpWAIy+94h9O/eVqIUCmihkdtYic225bDeLdNXq/T1bfmaTKY0+a4xjdjo7FveCKYE4mGFXOb+d8YcSeE8qeGmC+LkV7uxsEuImWCMumLgz4xSCVhDn7gOcVRzxKiv7udxUNZnOvgOGBBNcNSasqFGdF8+gs= antoine@pcantoine"
-    ];
   };
 
   # Auto-cleaning

@@ -22,6 +22,10 @@
 
     brightnessctl
     lxappearance
+
+	# Gaming
+	minecraft
+	
   ];
 
 }
