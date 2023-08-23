@@ -19,6 +19,7 @@
     ripgrep
     ranger
 		gimp
+		evince
 		neofetch
     gotop
 
@@ -26,6 +27,7 @@
     xdg-utils
     graphviz
     nodejs
+		emote
 
     # productivity
     obsidian
@@ -37,6 +39,8 @@
 
 		# passwords
 		bitwarden
+		otpclient
+		veracrypt
 
     # python
 		(python310.withPackages(ps: with ps; [
@@ -71,5 +75,7 @@
     # auto mount usb drives
     udiskie.enable = true;
   };
+
+
 
 }

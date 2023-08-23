@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+	inputs,
   ...
 }: {
 
@@ -18,6 +19,7 @@
 		grim
 		slurp
 		kooha
+		# inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
 
 		brightnessctl
 		lxappearance
@@ -60,6 +62,5 @@
 		Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
 		Install.WantedBy = [ "default.target" ];
 	};
-
 
 }

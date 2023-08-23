@@ -13,6 +13,7 @@
       l = "exa --icons";
       ll = "exa --icons -l";
       la = "exa --icons -la";
+			tree = "exa --tree";
       rg = "source ranger";
     };
     history = {

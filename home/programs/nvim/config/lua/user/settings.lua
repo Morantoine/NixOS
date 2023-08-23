@@ -13,8 +13,8 @@ vim.opt.smartcase = true
 -- Disable search highlight
 vim.opt.hlsearch = false
 -- Set tab spacing
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 -- Disable wrapping
 vim.opt.wrap = false
 -- Enable cursor line

@@ -31,10 +31,14 @@
 
     # user defined fonts
     fontconfig.defaultFonts = {
-      serif = [ "DejaVu Sans" ];
-      sansSerif = [ "DejaVu Sans" ];
-      monospace = [ "DejaVu Sans" ];
-      emoji = [ "Noto Color Emoji" ];
+      # serif = [ "DejaVu Sans" ];
+      # sansSerif = [ "DejaVu Sans" ];
+      # monospace = [ "DejaVu Sans" ];
+      # emoji = [ "Noto Color Emoji" ];
+      serif = [];
+      sansSerif = [];
+      monospace = [];
+      emoji = [];
     };
   };
 

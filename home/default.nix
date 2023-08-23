@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
 
   imports = [
-    ./hyprland
+		./hyprland
     ./waybar
     ./programs
     ./rofi
