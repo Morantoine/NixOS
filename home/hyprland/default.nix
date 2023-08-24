@@ -18,13 +18,13 @@
     grim
     slurp
     kooha
-    # inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
 
     brightnessctl
     lxappearance
 
 	# Gaming
-	minecraft
+	prismlauncher
 	
   ];
 

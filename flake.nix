@@ -72,8 +72,8 @@
               home-manager.useUserPackages = true;
 
               # Change the username !
-              # home-manager.extraSpecialArgs = { inherit inputs; };
-              home-manager.extraSpecialArgs = inputs;
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              # home-manager.extraSpecialArgs = inputs;
               home-manager.users.antoine = import ./home/balrog.nix;
             }
           ];
