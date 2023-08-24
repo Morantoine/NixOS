@@ -210,6 +210,7 @@ bindm = $mainMod, mouse:273, resizewindow
 
 
 # Screenshots
-bind = , Print, exec, grim /tmp/$(date +'%s_grim.png') && notify-send "Screenshot saved"
-bind = CTRL, Print, exec, grim -g "$(slurp -o)" - | wl-copy && notify-send "Screenshot copied to clipboard"
-bind = CTRL SHIFT, Print, exec, grim -g "$(slurp)" /tmp/$(date +'%s_grim.png')
+bind = , Print, exec, grimblast --notify copy
+bind = SHIFT, Print, exec, grimblast --notify save
+bind = CTRL, Print, exec, grimblast --notify --freeze copy area
+bind = CTRL SHIFT, Print, exec, grimblast --notify --freeze save area

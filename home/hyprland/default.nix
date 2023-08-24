@@ -15,8 +15,6 @@
     networkmanagerapplet
 
     # Screenshot / screen record
-    grim
-    slurp
     kooha
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
 
