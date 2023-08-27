@@ -5,7 +5,12 @@
 
   hardware = {
     opengl.enable = true;
-    nvidia.modesetting.enable = true;
+    nvidia = {
+		modesetting.enable = true;
+		nvidiaSettings = true;
+	  	forceFullCompositionPipeline = true;
+	  	powerManagement.enable = true;
+	};
   };
 
   services.xserver = {
@@ -14,6 +19,7 @@
       enable = true;
       wayland = true;
     };
+	videoDrivers = [ "nvidia" ];
   };
 
   programs.hyprland = {
