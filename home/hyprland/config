@@ -3,7 +3,9 @@
 #
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor=,preferred,auto,1.1
+# monitor=,preferred,auto,1.1
+monitor=HDMI-A-2, 1920x1080, 0x0, 1
+monitor=eDP-1, 1920x1080, 1920x0, 1
 
 xwayland {
   force_zero_scaling = true
@@ -26,6 +28,7 @@ exec-once =	wl-clip-persist --clipboard both
 
 # Some default env vars.
 # env = XCURSOR_SIZE,24
+env = WLR_NO_HARDWARE_CURSORS,1
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -208,9 +211,11 @@ bind = $mainMod ALT, down, resizeactive, 0 10
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
+# Send workspace to other monitor
+bind = $mainMod SHIFT, x, movecurrentworkspacetomonitor, +1
 
 # Screenshots
 bind = , Print, exec, grimblast --notify copy
-bind = SHIFT, Print, exec, grimblast --notify save
+bind = SHIFT, Print, exec, grimblast --notify copy
 bind = CTRL, Print, exec, grimblast --notify --freeze copy area
 bind = CTRL SHIFT, Print, exec, grimblast --notify --freeze save area
