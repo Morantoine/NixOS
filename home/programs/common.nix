@@ -20,7 +20,6 @@ in
     # utils
     ripgrep
     ranger
-    gimp
     evince
     neofetch
     gotop

@@ -29,12 +29,8 @@
     # use fonts specified by user rather than default ones
     enableDefaultPackages = false;
 
-    # user defined fonts
+    # Do I need this?
     fontconfig.defaultFonts = {
-      # serif = [ "DejaVu Sans" ];
-      # sansSerif = [ "DejaVu Sans" ];
-      # monospace = [ "DejaVu Sans" ];
-      # emoji = [ "Noto Color Emoji" ];
       serif = [ ];
       sansSerif = [ ];
       monospace = [ ];

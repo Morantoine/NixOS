@@ -64,5 +64,8 @@
 	  setSocketVariable = true;
 	};
 
+  xdg.mime.defaultApplications = {
+  	"image/gif" = ["evince.desktop"];
+  };
 
 }
