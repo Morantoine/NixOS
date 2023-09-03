@@ -60,7 +60,12 @@
 
             ({ config, pkgs, ... }: {
               # alacritty overlay for theming
-              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+              nixpkgs.overlays = [
+			  	alacritty-theme.overlays.default
+				(final: prev: {
+				 	xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix {};
+				 })
+				];
             })
 
             ./hosts/balrog

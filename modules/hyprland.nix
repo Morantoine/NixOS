@@ -44,6 +44,7 @@
     wl-clip-persist
     # Pulseaudio to expose pactl
     pulseaudio
+	xwaylandvideobridge
   ];
 
   # Fix locking problem
