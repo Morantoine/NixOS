@@ -32,8 +32,8 @@ env = WLR_NO_HARDWARE_CURSORS,1
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
-    kb_layout = es
-    kb_variant =
+    kb_layout = us
+    kb_variant = intl
 
     follow_mouse = 1
 
@@ -44,6 +44,11 @@ input {
 
     sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
 		numlock_by_default = true
+}
+
+device:at-translated-set-2-keyboard {
+	   kb_layout = es
+	   kb_variant =
 }
 
 general {
