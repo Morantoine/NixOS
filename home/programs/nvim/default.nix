@@ -14,6 +14,7 @@
       gnumake
       fd
       nodejs
+	  tree-sitter
     ];
   };
 
