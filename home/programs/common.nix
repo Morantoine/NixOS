@@ -32,6 +32,7 @@ in
 
     # productivity
     obsidian
+	notion-app-enhanced
 
     # messaging
     signal-desktop
