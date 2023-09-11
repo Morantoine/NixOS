@@ -45,6 +45,17 @@
     # Pulseaudio to expose pactl
     pulseaudio
 	xwaylandvideobridge
+    (lutris.override {
+      extraLibraries =  pkgs: [
+        # List library dependencies here
+      ];
+    })
+	wineWowPackages.staging
+	wineWowPackages.stable
+	wineWowPackages.waylandFull
+
+	xdg-desktop-portal-hyprland
+	wireplumber
   ];
 
   # Fix locking problem
