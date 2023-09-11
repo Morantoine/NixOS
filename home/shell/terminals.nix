@@ -23,7 +23,7 @@ in
         italic.family = font;
         size = 11;
       };
-      import = [ pkgs.alacritty-theme.dracula ];
+      import = [ pkgs.alacritty-theme.ayu_dark ];
     };
   };
 }

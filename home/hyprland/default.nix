@@ -5,7 +5,7 @@
 }: {
 
   home.file.".config/hypr/hyprland.conf".source = ./config;
-  home.file.".wallpaper.jpg".source = ../../wallpaper.jpg;
+  home.file.".wallpaper.jpg".source = ../../wallpapers/current_wallpaper.jpg;
   home.file.".config/mako".source = ./mako_config;
 
   home.packages = with pkgs; [
@@ -23,6 +23,9 @@
 
 	# Gaming
 	prismlauncher
+
+	# Set red color at night
+	wlsunset
   ];
 
 }
