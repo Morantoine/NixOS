@@ -54,7 +54,6 @@ in
     rustc
     cargo
     rustfmt
-    rust-analyzer
 
     # latex
     texlive.combined.scheme-full

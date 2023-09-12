@@ -5,16 +5,16 @@
   home.packages = with pkgs; [
     gnumake
     gcc
+      fd
+      nodejs
+      tree-sitter
   ];
 
   programs.neovim = {
     enable = true;
     extraPackages = with pkgs; [
-      # Optional dependency for telescope
-      gnumake
-      fd
-      nodejs
-	  tree-sitter
+      lua-language-server
+      rust-analyzer
     ];
   };
 

@@ -23,6 +23,7 @@
 
 	# Gaming
 	prismlauncher
+	qbittorrent
 
 	# Set red color at night
 	wlsunset
