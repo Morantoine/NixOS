@@ -47,6 +47,16 @@ return {
           ellipsis_char = "...",
         }),
       },
+      window = {
+        completion = {
+          border = "rounded",
+          winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = 'FloatBorder:FloatBorder,Normal:Normal',
+        },
+      }
     })
 
     luasnip.config.set_config({

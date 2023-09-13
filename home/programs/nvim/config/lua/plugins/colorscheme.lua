@@ -7,6 +7,7 @@ return {
         autocmd!
         autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
         autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+        autocmd ColorScheme * highlight ErrorMsg guifg=#d95757 guibg=NONE
       augroup END
     ]])
     -- set the colorscheme

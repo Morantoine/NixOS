@@ -33,6 +33,7 @@ return {
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {})
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>" ,{})
     keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", {})
+    keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
     keymap.set("n", "<leader>sg", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", {})
   end,
 
