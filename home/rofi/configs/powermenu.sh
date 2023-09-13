@@ -100,7 +100,7 @@ case ${chosen} in
 		if [[ -x '/run/current-system/sw/bin/i3lock' ]]; then
 			~/.config/i3/scripts/blur-lock
 		elif [[ -x '/run/current-system/sw/bin/swaylock' ]]; then
-			swaylock --font-size 70 --indicator-radius 100 -i ~/.wallpaper.jpg
+			swaylock --font-size 30 --indicator-radius 100 -i ~/.wallpaper.jpg
 		fi
         ;;
     $suspend)

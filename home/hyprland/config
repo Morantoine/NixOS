@@ -19,6 +19,7 @@ exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRE
 exec-once = swaybg -m fill -i ~/.wallpaper.jpg
 exec-once = ~/.config/ssh-auto-sock.sh
 exec-once = waybar
+exec-once = pypr
 exec-once = nm-applet
 exec-once = mako -c ~/.config/mako
 exec-once = blueman-applet
@@ -231,3 +232,15 @@ bind = , Print, exec, grimblast --notify copy
 bind = SHIFT, Print, exec, grimblast --notify copy
 bind = CTRL, Print, exec, grimblast --notify --freeze copy area
 bind = CTRL SHIFT, Print, exec, grimblast --notify --freeze save area
+
+# Scratchbad bindings
+bind = $mainMod, S, exec, pypr toggle term
+$dropterm  = ^(dropterm)$
+windowrule = float,$dropterm
+windowrule = workspace special silent,$dropterm
+windowrule = size 75% 60%,$dropterm
+
+# Expose
+bind = $mainMod SHIFT, D, exec, pypr expose
+bind = $mainMod, M, exec, pypr toggle_minimized
+bind = $mainMod SHIFT, M, togglespecialworkspace, minimized

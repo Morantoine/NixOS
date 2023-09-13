@@ -8,6 +8,28 @@ let
       				)
       		'';
   });
+  my-python-packages = ps: with ps; [
+  (
+    buildPythonPackage rec {
+      pname = "pyprland";
+      version = "1.4.0";
+      format = "pyproject";
+      src = pkgs.fetchFromGitHub {
+        owner = "hyprland-community";
+        repo = pname;
+        rev = version;
+        hash = "sha256-OcL5Yp+gfRSGfmvLiA/M6nIRj+Vm0TxTX88EWLX9iPM=";
+      };
+      doCheck = false;
+      nativeBuildInputs = [
+        # Specify dependencies
+        poetry-core
+      ];
+    }
+  )
+  ];
+
+
 
 in
 {
@@ -32,7 +54,7 @@ in
 
     # productivity
     obsidian
-	notion-app-enhanced
+    notion-app-enhanced
 
     # messaging
     signal-desktop
@@ -45,10 +67,7 @@ in
     veracrypt
 
     # python
-    (python310.withPackages (ps: with ps; [
-      python-dbusmock # Music in i3blocks
-      pygobject3
-    ]))
+    (python310.withPackages my-python-packages)
 
     # Rust
     rustc
