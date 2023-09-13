@@ -6,6 +6,7 @@ return {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     "nvim-tree/nvim-web-devicons",
     "nvim-treesitter/nvim-treesitter",
+    "jvgrootveld/telescope-zoxide"
   },
   config = function()
     local telescope = require("telescope")
@@ -22,9 +23,23 @@ return {
           },
         },
       },
+      pickers = {
+        buffers = {
+          show_all_buffers = true,
+          sort_lastused = true,
+          theme = "dropdown",
+          previewer = false,
+          mappings = {
+            i = {
+              ["<c-d>"] = "delete_buffer",
+            }
+          }
+        }
+      }
     })
 
     telescope.load_extension("fzf")
+    telescope.load_extension("zoxide")
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
@@ -33,7 +48,8 @@ return {
     keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", {})
     keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>" ,{})
     keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", {})
-    keymap.set("n", "<leader>fn", "<cmd>Telescope notify<cr>", {})
+    keymap.set("n", "<leader>fn", "<cmd>Noice telescope<cr>", {})
+    keymap.set("n", "<leader>fz", "<cmd>Telescope zoxide list<cr>", {})
     keymap.set("n", "<leader>sg", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", {})
   end,
 

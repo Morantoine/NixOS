@@ -25,6 +25,12 @@ return {
       presets = {
         lsp_doc_border = true
       },
+      routes = {
+        {
+          view = "split",
+          filter = { event = "msg_show", min_height = 20 },
+        },
+      },
       vim.keymap.set("c", "<S-Enter>", function()
         require("noice").redirect(vim.fn.getcmdline())
         end, { desc = "Redirect Cmdline" })
@@ -33,7 +39,8 @@ return {
     local notify = require("notify")
     notify.setup({
       background_colour = "#000000",
-      stages = "fade"
+      stages = "fade",
+      render = "minimal"
     })
   end
 
