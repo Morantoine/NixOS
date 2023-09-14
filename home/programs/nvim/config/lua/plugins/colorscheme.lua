@@ -1,20 +1,29 @@
 return {
-  "Luxed/ayu-vim",
+  "Shatur/neovim-ayu",
   config = function()
     -- transparent background and gutter
     vim.cmd([[
       augroup user_colors
         autocmd!
-        autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-        autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
         autocmd ColorScheme * highlight ErrorMsg guifg=#d95757 guibg=NONE
       augroup END
     ]])
+    require("ayu").setup({
+      overrides = {
+          Normal = { bg = "None" },
+          ColorColumn = { bg = "None" },
+          SignColumn = { bg = "None" },
+          Folded = { bg = "None" },
+          FoldColumn = { bg = "None" },
+          CursorLine = { bg = "None" },
+          CursorColumn = { bg = "None" },
+          WhichKeyFloat = { bg = "None" },
+          VertSplit = { bg = "None" },
+      },
+    })
     -- set the colorscheme
     vim.cmd([[
-      set background=dark
-      let g:ayucolor="dark"
-      colorscheme ayu
+      colorscheme ayu-dark
     ]])
   end,
 }
