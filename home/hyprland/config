@@ -149,7 +149,7 @@ layerrule=noanim,selection
 $mainMod = SUPER
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-bind = $mainMod, RETURN, exec, alacritty
+bind = $mainMod, RETURN, exec, kitty
 bind = $mainMod, Q, killactive, 
 bind = $mainMod, V, togglefloating, 
 bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidmenu.conf

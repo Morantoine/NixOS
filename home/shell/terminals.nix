@@ -6,24 +6,17 @@ let
   font = "Hack Nerd Font";
 in
 {
-  programs.alacritty = {
+  programs.kitty = {
     enable = true;
+    font.name = font;
     settings = {
-      window = {
-        # Add padding for WM
-        padding = {
-          x = 10;
-          y = 10;
-        };
-        opacity = 0.95;
-      };
-      font = {
-        normal.family = font;
-        bold.family = font;
-        italic.family = font;
-        size = 11;
-      };
-      import = [ pkgs.alacritty-theme.ayu_dark ];
+      window_padding_width = 5;
+      background_opacity = "0.95";
+      font_size = 11;
+      confirm_os_window_close = 0;
+      placement_strategy  = "top-left";
+      text_composition_strategy = "legacy";
     };
+    theme = "Ayu";
   };
 }
