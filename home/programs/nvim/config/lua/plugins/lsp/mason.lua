@@ -18,6 +18,7 @@ return {
          "lua_ls",
          "pyright",
          "rust_analyzer",
+         "texlab"
        },
      })
    end

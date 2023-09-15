@@ -55,6 +55,8 @@ in
     # productivity
     obsidian
     notion-app-enhanced
+    calibre
+    gvfs
 
     # messaging
     signal-desktop
@@ -91,10 +93,10 @@ in
     ssh.enable = true;
   };
 
-  services = {
-    # auto mount usb drives
-    udiskie.enable = true;
-  };
+  # services = {
+  #   # auto mount usb drives
+  #   udisks2.enable = true;
+  # };
 
 
 

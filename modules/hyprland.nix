@@ -63,7 +63,12 @@
 
   # Keyring
   services.gnome.gnome-keyring.enable = true;
+  programs.ssh.startAgent = true;
   programs.seahorse.enable = true;
+
+  environment.sessionVariables = {
+    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
+  };
 
   programs.steam = {
     enable = true;
@@ -79,5 +84,7 @@
   xdg.mime.defaultApplications = {
   	"image/gif" = ["evince.desktop"];
   };
+
+  services.udisks2.enable = true;
 
 }

@@ -68,6 +68,12 @@ return {
       },
     }
 
+    -- configure latex server
+    lspconfig.texlab.setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
+
     -- custom capabilities for clangd
     local capabilities_clang = cmp_nvim_lsp.default_capabilities()
     capabilities_clang.offsetEncoding = { "utf-16" }
