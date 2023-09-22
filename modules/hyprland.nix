@@ -84,10 +84,6 @@
 	  setSocketVariable = true;
 	};
 
-  xdg.mime.defaultApplications = {
-  	"image/gif" = ["evince.desktop"];
-  };
-
   services.udisks2.enable = true;
 
 }

@@ -155,6 +155,7 @@ bind = $mainMod, V, togglefloating,
 bind = $mainMod, D, exec, rofi -show drun -config ~/.config/rofi/configs/rofidmenu.conf
 bind = $mainMod SHIFT, E, exec, ~/.config/rofi/configs/powermenu.sh
 bind = $mainMod, F, fullscreen
+bind = $mainMod, J, togglesplit, #dwindle
 
 # Fn keys
 bind = ,XF86AudioRaiseVolume, exec, pactl set-sink-volume @DEFAULT_SINK@ +5%
