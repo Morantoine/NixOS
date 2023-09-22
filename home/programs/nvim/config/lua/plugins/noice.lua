@@ -30,6 +30,10 @@ return {
           view = "split",
           filter = { event = "msg_show", min_height = 20 },
         },
+        {
+          view = "notify",
+          filter = { event = "msg_showmode" },
+        },
       },
       vim.keymap.set("c", "<S-Enter>", function()
         require("noice").redirect(vim.fn.getcmdline())

@@ -42,7 +42,9 @@ in
     # utils
     ripgrep
     ranger
+    xdragon
     evince
+    vlc
     neofetch
     gotop
 

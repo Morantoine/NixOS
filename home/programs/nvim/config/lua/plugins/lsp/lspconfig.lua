@@ -20,10 +20,6 @@ return {
       keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
       keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
       keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-      keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufrn=0<CR>", opts)
-      keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-      keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-      keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
       keymap.set("n", "K", vim.lsp.buf.hover, opts)
       keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
     end

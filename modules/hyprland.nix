@@ -19,6 +19,13 @@
       enable = true;
       wayland = true;
     };
+
+    displayManager.sessionCommands = ''
+      			eval $(gnome-keyring-daemon --start)
+      			export SSH_AUTH_SOCK
+            /usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
+    '';
+
 	videoDrivers = [ "nvidia" ];
   };
 
@@ -65,10 +72,6 @@
   services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = true;
   programs.seahorse.enable = true;
-
-  environment.sessionVariables = {
-    SSH_AUTH_SOCK = "/run/user/1000/keyring/ssh";
-  };
 
   programs.steam = {
     enable = true;
