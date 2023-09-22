@@ -1,14 +1,12 @@
 {
-  "layer": "top", // Waybar at top layer
-  "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 10, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  "spacing": 0, // Gaps between modules (4px)
+  "layer": "top",
+  "position": "bottom",
+  "height": 30,
+  "spacing": 0,
   "margin-bottom": 4,
   "margin-left": 4,
   "margin-right": 4,
-  // Choose the order of the modules
-  "modules-left": ["wlr/workspaces", "custom/dnd"],
+  "modules-left": ["hyprland/workspaces", "custom/dnd"],
   "modules-center": ["custom/spotify"],
   "modules-right": [
     "pulseaudio",
@@ -33,7 +31,7 @@
       "unlocked": ""
     }
   },
-  "wlr/workspaces": {
+  "hyprland/workspaces": {
     "on-click": "activate",
     "sort-by-number": true
   },
@@ -179,7 +177,7 @@
     "format": "{}{icon}",
     "format-icons": {
       "default": "",
-      "dnd": ""
+      "dnd": " "
     },
     "on-click": "makoctl mode | grep 'do-not-disturb' && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb; pkill -RTMIN+11 waybar",
     "on-click-right": "makoctl restore",

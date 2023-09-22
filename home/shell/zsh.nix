@@ -2,7 +2,7 @@
 
 {
 
-  programs.exa.enable = true;
+  programs.eza.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -10,10 +10,10 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     shellAliases = {
-      l = "exa --icons";
-      ll = "exa --icons -l";
-      la = "exa --icons -la";
-      tree = "exa --tree";
+      l = "eza --icons";
+      ll = "eza --icons -l";
+      la = "eza --icons -la";
+      tree = "eza --tree";
       rg = "source ranger";
     };
     history = {
@@ -53,7 +53,7 @@
     enableZshIntegration = true;
     defaultCommand = "rg --files --hidden";
     changeDirWidgetOptions = [
-      "--preview 'exa --icons --git --color always -T -L 3 {} | head -200'"
+      "--preview 'eza --icons --git --color always -T -L 3 {} | head -200'"
       "--exact"
     ];
   };
