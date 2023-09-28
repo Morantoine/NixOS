@@ -28,7 +28,7 @@ let
     }
   )
   ];
-
+  krisp_patch = pkgs.callPackage ./krisp_patch {} ;
 
 
 in
@@ -64,6 +64,7 @@ in
     signal-desktop
     telegram-desktop
     discord
+    krisp_patch
 
     # passwords
     bitwarden
