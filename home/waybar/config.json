@@ -157,14 +157,13 @@
     "tooltip": false
   },
   "custom/spotify": {
-    "exec": "playerctl -p spotify -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "exec": "playerctl -p spotify -a metadata --format '{\"text\": \"{{markup_escape(trunc(artist, 30))}} - {{markup_escape(trunc(title, 30))}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
     "format": "  {}",
     "return-type": "json",
     "on-click": "playerctl -p spotify play-pause",
     "on-double-click": "playerctl -p spotify next",
     "on-triple-click": "playerctl -p spotify previous && playerctl -p spotify previous",
     "on-scroll-up": "hyprctl dispatch focuswindow Spotify",
-    "max-length": 45,
     "tooltip": false
   },
   "disk": {
