@@ -69,9 +69,9 @@
   security.pam.services.swaylock = { };
 
   # Keyring
-  services.gnome.gnome-keyring.enable = true;
-  programs.ssh.startAgent = true;
-  programs.seahorse.enable = true;
+  # services.gnome.gnome-keyring.enable = true;
+  # programs.ssh.startAgent = true;
+  # programs.seahorse.enable = true;
 
   programs.steam = {
     enable = true;
@@ -86,4 +86,9 @@
 
   services.udisks2.enable = true;
 
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "gtk2";
+    enableSSHSupport = true;
+  };
 }
