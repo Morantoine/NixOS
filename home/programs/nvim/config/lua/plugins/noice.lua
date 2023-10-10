@@ -34,6 +34,19 @@ return {
           view = "notify",
           filter = { event = "msg_showmode" },
         },
+        {
+        filter = {
+          event = 'msg_show',
+          any = {
+            { find = '%d+L, %d+B' },
+            { find = '; after #%d+' },
+            { find = '; before #%d+' },
+            { find = '%d fewer lines' },
+            { find = '%d more lines' },
+          },
+        },
+        opts = { skip = true },
+        }
       },
       vim.keymap.set("c", "<S-Enter>", function()
         require("noice").redirect(vim.fn.getcmdline())
