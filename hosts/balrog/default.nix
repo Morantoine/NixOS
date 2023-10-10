@@ -19,8 +19,6 @@
     efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
-      # device = "/dev/disk/by-uuid/173D-8C88";
-      # device = "/dev/vda";
       device = "nodev";
       efiSupport = true;
       useOSProber = false;
