@@ -20,12 +20,6 @@
       wayland = true;
     };
 
-    displayManager.sessionCommands = ''
-      			eval $(gnome-keyring-daemon --start)
-      			export SSH_AUTH_SOCK
-            /usr/bin/ssh-agent -D -a $SSH_AUTH_SOCK
-    '';
-
 	videoDrivers = [ "nvidia" ];
   };
 
@@ -63,6 +57,8 @@
 
 	xdg-desktop-portal-hyprland
 	wireplumber
+
+  gnome.seahorse
   ];
 
   # Fix locking problem
@@ -70,7 +66,7 @@
 
   # Keyring
   # services.gnome.gnome-keyring.enable = true;
-  # programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false;
   # programs.seahorse.enable = true;
 
   programs.steam = {
@@ -86,9 +82,5 @@
 
   services.udisks2.enable = true;
 
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryFlavor = "gtk2";
-    enableSSHSupport = true;
-  };
+  services.pcscd.enable = true;
 }
