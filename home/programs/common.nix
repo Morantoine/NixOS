@@ -74,11 +74,6 @@ in
     # python
     (python310.withPackages my-python-packages)
 
-    # Rust
-    rustc
-    cargo
-    rustfmt
-
     # latex
     texlive.combined.scheme-full
 
