@@ -14,7 +14,7 @@ in
       background_opacity = "0.95";
       font_size = 11;
       confirm_os_window_close = 0;
-      placement_strategy  = "top-left";
+      placement_strategy = "top-left";
       text_composition_strategy = "legacy";
     };
     theme = "Ayu";

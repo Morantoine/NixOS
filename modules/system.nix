@@ -50,7 +50,6 @@
     enable = true;
     settings = {
       X11Forwarding = true;
-      PermitRootLogin = "yes"; # disable root login
       PasswordAuthentication = false; # disable password login
     };
     openFirewall = true;
@@ -67,8 +66,6 @@
     curl
     git
     sysstat
-    scrot
-    neofetch
   ];
 
   # Enable sound with pipewire.
@@ -100,11 +97,6 @@
     };
 
   };
-
-  # Enable bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
-
 
   # Change user and set a password !
   users.users.antoine = {

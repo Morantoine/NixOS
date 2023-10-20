@@ -6,11 +6,11 @@
   hardware = {
     opengl.enable = true;
     nvidia = {
-		modesetting.enable = true;
-		nvidiaSettings = true;
-	  	forceFullCompositionPipeline = true;
-	  	powerManagement.enable = true;
-	};
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      forceFullCompositionPipeline = true;
+      powerManagement.enable = true;
+    };
   };
 
   services.xserver = {
@@ -20,7 +20,7 @@
       wayland = true;
     };
 
-	videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
   };
 
   programs.hyprland = {
@@ -45,29 +45,17 @@
     wl-clip-persist
     # Pulseaudio to expose pactl
     pulseaudio
-	xwaylandvideobridge
-    (lutris.override {
-      extraLibraries =  pkgs: [
-        # List library dependencies here
-      ];
-    })
-	wineWowPackages.staging
-	wineWowPackages.stable
-	wineWowPackages.waylandFull
-
-	xdg-desktop-portal-hyprland
-	wireplumber
-
-  gnome.seahorse
+    xwaylandvideobridge
+    xdg-desktop-portal-hyprland
+    wireplumber
+    gnome.seahorse
   ];
 
   # Fix locking problem
   security.pam.services.swaylock = { };
 
   # Keyring
-  # services.gnome.gnome-keyring.enable = true;
   programs.ssh.startAgent = false;
-  # programs.seahorse.enable = true;
 
   programs.steam = {
     enable = true;
@@ -76,11 +64,17 @@
   };
 
   virtualisation.docker.rootless = {
-	  enable = true;
-	  setSocketVariable = true;
-	};
+    enable = true;
+    setSocketVariable = true;
+  };
 
+  # Automount (for Kindle mostly)
   services.udisks2.enable = true;
 
   services.pcscd.enable = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
 }

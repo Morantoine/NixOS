@@ -61,11 +61,11 @@
             ({ config, pkgs, ... }: {
               # alacritty overlay for theming
               nixpkgs.overlays = [
-			  	alacritty-theme.overlays.default
-				(final: prev: {
-				 	xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix {};
-				 })
-				];
+                alacritty-theme.overlays.default
+                (final: prev: {
+                  xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix { };
+                })
+              ];
             })
 
             ./hosts/balrog
@@ -79,7 +79,7 @@
               # Change the username !
               home-manager.extraSpecialArgs = { inherit inputs; };
               # home-manager.extraSpecialArgs = inputs;
-              home-manager.users.antoine = import ./home/balrog.nix;
+              home-manager.users.antoine = import ./hosts/balrog/balrog_home.nix;
             }
           ];
         };

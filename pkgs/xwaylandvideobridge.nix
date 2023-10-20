@@ -1,5 +1,14 @@
-{ stdenv, fetchFromGitLab, fetchpatch, cmake, pkg-config, extra-cmake-modules
-, qt5, libsForQt5, wrapQtAppsHook, }:
+{ stdenv
+, fetchFromGitLab
+, fetchpatch
+, cmake
+, pkg-config
+, extra-cmake-modules
+, qt5
+, libsForQt5
+, wrapQtAppsHook
+,
+}:
 stdenv.mkDerivation {
   pname = "xwaylandvideobridge";
   version = "unstable-2023-05-28";

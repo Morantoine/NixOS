@@ -18,15 +18,15 @@
     };
     history = {
       # path = "${config.home.homeDirectory}/.zshistory";
-	  ignoreDups = true;
-	  ignoreSpace = true;
+      ignoreDups = true;
+      ignoreSpace = true;
       save = 10000;
       share = true;
     };
     historySubstringSearch = {
       enable = true;
-	  searchUpKey = ["^[OA"];
-	  searchDownKey = ["^[OB"];
+      searchUpKey = [ "^[OA" ];
+      searchDownKey = [ "^[OB" ];
     };
 
     initExtra = ''
@@ -56,6 +56,12 @@
       "--preview 'eza --icons --git --color always -T -L 3 {} | head -200'"
       "--exact"
     ];
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+    enableZshIntegration = true;
   };
 
 }
