@@ -11,14 +11,14 @@
 }:
 stdenv.mkDerivation {
   pname = "xwaylandvideobridge";
-  version = "unstable-2023-05-28";
+  version = "0.2";
 
   src = fetchFromGitLab {
     domain = "invent.kde.org";
     owner = "system";
     repo = "xwaylandvideobridge";
-    rev = "16091a997d40eb9e5a46f3f0eecceff8fe348c87";
-    hash = "sha256-Wzd48cIB/MCbzjBBfdmUfjA43oG0jtg7tWFl91FaDtk=";
+    rev = "ddb5e48d0984ff922c05543d7c0045ef6eaa1ab8";
+    hash = "sha256-79Z4BH7C85ZF+1Zivs3bTey7IdUnaDKhvZxzL6sDqUs=";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules pkg-config wrapQtAppsHook ];

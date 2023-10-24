@@ -48,6 +48,8 @@ in
     brightnessctl
     lxappearance
 
+    xwaylandvideobridge
+
     # Pyprland
     (python310.withPackages my-python-packages)
   ];

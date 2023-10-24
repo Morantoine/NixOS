@@ -25,6 +25,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
     # Spicetify flake for Nix integration
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
@@ -40,6 +41,7 @@
   outputs =
     inputs@{ self
     , nixpkgs
+    , hyprland
     , spicetify-nix
     , home-manager
     , hyprland-contrib
@@ -49,17 +51,18 @@
         # My hostname, don't forget to change it !
         balrog = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
           # Load configuration
           modules = [
 
-            ({ config, pkgs, ... }: {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  # Add xwaylandvideobridge to the overlay
-                  xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix { };
-                })
-              ];
-            })
+            # ({ config, pkgs, ... }: {
+            #   nixpkgs.overlays = [
+            #     (final: prev: {
+            #       # Add xwaylandvideobridge to the overlay
+            #       xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix { };
+            #     })
+            #   ];
+            # })
 
             ./hosts/balrog
 

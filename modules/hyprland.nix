@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 
 {
@@ -25,6 +25,7 @@
 
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
     enableNvidiaPatches = true;
   };
@@ -44,9 +45,6 @@
     wl-clipboard
     wl-clip-persist
     # Pulseaudio to expose pactl
-    pulseaudio
-    xwaylandvideobridge
-    xdg-desktop-portal-hyprland
     wireplumber
     gnome.seahorse
   ];

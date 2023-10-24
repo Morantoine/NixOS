@@ -15,7 +15,7 @@ xwayland {
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 # Execute your favorite apps at launch
-exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec-once = swaybg -m fill -i ~/.wallpaper.jpg
 exec-once = ~/.config/ssh-auto-sock.sh
 exec-once = waybar
@@ -62,9 +62,6 @@ general {
     col.active_border = rgba(33ccffee) rgba(2041e6ee) 45deg
     col.inactive_border = rgba(595959aa)
 
-    col.group_border_active = rgba(33ccffee) rgba(2041e6ee) 45deg
-    col.group_border = rgba(595959aa)
-
     layout = dwindle
 }
 
@@ -89,8 +86,17 @@ decoration {
     col.shadow = rgba(1a1a1aee)
 }
 
+group {
+  col.border_active = rgba(33ccffee) rgba(2041e6ee) 45deg
+  col.border_inactive = rgba(595959aa)
+
+  groupbar {
+    render_titles = false
+  }
+}
+
 misc {
-	render_titles_in_groupbar = false
+  disable_hyprland_logo = true
 }
 
 animations {
