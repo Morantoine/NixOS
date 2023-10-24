@@ -55,15 +55,6 @@
           # Load configuration
           modules = [
 
-            # ({ config, pkgs, ... }: {
-            #   nixpkgs.overlays = [
-            #     (final: prev: {
-            #       # Add xwaylandvideobridge to the overlay
-            #       xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix { };
-            #     })
-            #   ];
-            # })
-
             ./hosts/balrog
 
             # Load Home Manager
