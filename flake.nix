@@ -30,11 +30,6 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Custom flake for managing alacritty themes
-    alacritty-theme = {
-      url = "github:alexghr/alacritty-theme.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     # Hyprland utils
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
@@ -44,7 +39,6 @@
 
   outputs =
     inputs@{ self
-    , alacritty-theme
     , nixpkgs
     , spicetify-nix
     , home-manager
@@ -59,10 +53,9 @@
           modules = [
 
             ({ config, pkgs, ... }: {
-              # alacritty overlay for theming
               nixpkgs.overlays = [
-                alacritty-theme.overlays.default
                 (final: prev: {
+                  # Add xwaylandvideobridge to the overlay
                   xwaylandvideobridge = pkgs.libsForQt5.callPackage ./pkgs/xwaylandvideobridge.nix { };
                 })
               ];
