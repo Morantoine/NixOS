@@ -45,6 +45,7 @@
     wl-clipboard
     wl-clip-persist
     # Pulseaudio to expose pactl
+    pulseaudio
     wireplumber
     gnome.seahorse
   ];
