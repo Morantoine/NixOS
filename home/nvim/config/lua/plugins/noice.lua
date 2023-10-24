@@ -25,32 +25,16 @@ return {
 			presets = {
 				lsp_doc_border = true,
 			},
-			routes = {
-				{
-					view = "split",
-					filter = { event = "msg_show", min_height = 20 },
-				},
-				{
-					view = "notify",
-					filter = { event = "msg_showmode" },
-				},
-				{
-					filter = {
-						event = "msg_show",
-						any = {
-							{ find = "%d+L, %d+B" },
-							{ find = "; after #%d+" },
-							{ find = "; before #%d+" },
-							{ find = "%d fewer lines" },
-							{ find = "%d more lines" },
-						},
-					},
-					opts = { skip = true },
-				},
-			},
-			vim.keymap.set("c", "<S-Enter>", function()
-				require("noice").redirect(vim.fn.getcmdline())
-			end, { desc = "Redirect Cmdline" }),
+      messages = {
+        -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+        -- This is a current Neovim limitation.
+        enabled = false, -- enables the Noice messages UI
+        view = "notify", -- default view for messages
+        view_error = "notify", -- view for errors
+        view_warn = "notify", -- view for warnings
+        view_history = "messages", -- view for :messages
+        view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
+      },
 		})
 
 		local notify = require("notify")
