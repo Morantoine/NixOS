@@ -48,6 +48,7 @@
     # Pulseaudio to expose pactl
     pulseaudio
     wireplumber
+    xwaylandvideobridge
     gnome.seahorse
   ];
 

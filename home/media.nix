@@ -13,6 +13,8 @@
     imv
     # video
     vlc
+    # ebooks
+    calibre
   ];
 
 }
