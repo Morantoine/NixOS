@@ -36,6 +36,8 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -60,6 +62,8 @@
             # Load Home Manager
             home-manager.nixosModules.home-manager
             {
+              nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 

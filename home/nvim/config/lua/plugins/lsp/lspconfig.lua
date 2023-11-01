@@ -60,7 +60,11 @@ return {
 			on_attach = on_attach,
 			-- Server-specific settings. See `:help lspconfig-setup`
 			settings = {
-				["rust-analyzer"] = {},
+				["rust-analyzer"] = {
+          diagnostics = {
+            enable = true;
+          }
+        },
 			},
 		})
 
