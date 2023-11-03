@@ -98,6 +98,12 @@
 
   };
 
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
+
   # Change user and set a password !
   users.users.antoine = {
     isNormalUser = true;
