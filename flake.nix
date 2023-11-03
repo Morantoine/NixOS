@@ -74,7 +74,29 @@
             }
           ];
         };
-        # Add other configurations here if needed...
+        rattlesnake = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          # Load configuration
+          modules = [
+
+            ./hosts/rattlesnake
+
+            # Load Home Manager
+            home-manager.nixosModules.home-manager
+            {
+              nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
+
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              # Change the username !
+              home-manager.extraSpecialArgs = { inherit inputs; };
+              # home-manager.extraSpecialArgs = inputs;
+              home-manager.users.antoine = import ./hosts/balrog/balrog_home.nix;
+            }
+          ];
+        };
       };
     };
 }
