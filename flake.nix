@@ -36,8 +36,15 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
+    # Neovim-nightly
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
+    # XP-bot on Rattlesnake
+    xp-bot = {
+      url = "github:Morantoine/XP_Bot";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Sops-Nix for secrets managing
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -51,6 +58,8 @@
     , spicetify-nix
     , home-manager
     , hyprland-contrib
+    , neovim-nightly-overlay
+    , xp-bot
     , sops-nix
     , ...
     }: {
@@ -100,7 +109,7 @@
               # Change the username !
               home-manager.extraSpecialArgs = { inherit inputs; };
               # home-manager.extraSpecialArgs = inputs;
-              home-manager.users.antoine = import ./hosts/balrog/balrog_home.nix;
+              home-manager.users.antoine = import ./hosts/rattlesnake/rattlesnake_home.nix;
             }
           ];
         };

@@ -65,6 +65,7 @@
     killall
     curl
     git
+    sops
     sysstat
   ];
 
@@ -110,6 +111,9 @@
     description = "antoine";
     shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
+    openssh.authorizedKeys.keys = [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEs2949hxknStRXLEexRKC3Qwc/baEnEDEAlddUgw08FI7TC1FuU1c+bSOHopS25G0MFPqYVdYU1VKMfAC7W7/yPaOl3vaM4nrJVSipFKtaaPrWsHRwzNNdpeoYnh/SH23AT2kSF7oI2vYT7r2EONVzWO6F33LUk+5iRu9IY+p2AjWlXE4lpelTq3TpHKS8jiifuTJgfLltPUx7pBveNZOZWTc5DNu0hojS36ckR2cOii3vLzKhFeslbz5jxHaVieZgE09TvGJlhsk8Y9MKlAGs9IHrX4XuJPoCRGkNHDYNmGicQBJu7jaSRvwQNZxRG3PnsQ/UbUaTrW4OnHR5LcA61ZV9JZE4iDVvIjcWKiJpwO5GG7uy9wwjaOfSOLshi02g6D03nD+kOmp1qSDqhX+XXEgVvgvKNxbxtTk6RkbJqevuaRXwac1+P2A/2sB/S4IRcCjiyTwIRSr8nshFgWU+wl8LMmyUUXRxFYzhGfI05/PKuPZnPpyllzMvrI+pK/NV2nVjp34dY+coV+R8K5CqRjJNKVQlLrfqfqjw2erbdZCnHtNn1zsKBxT7WMTZApDWTxAE2XyTTLpsDhzDRm7an9Hje86UsK7CR+fueFBdjIitykxWBKWByHwFEaa3DQi0LysfaUbnHOUk0vwETFQKbF96yWOLdKuC0Az7n6oHw== (none)" 
+    ];
   };
 
   # Auto-cleaning

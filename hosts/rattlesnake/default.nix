@@ -9,17 +9,19 @@
     [
       # General system settings
       ../../modules/system.nix
+      # Containers
+      ../../modules/nginx.nix
       # Incluse results of the hardware scan
       ./hardware-configuration.nix
     ];
 
+  sops.defaultSopsFile = ../../secrets/rattlesnake.yaml;
+
   # Bootloader
   boot.loader = {
-    efi.canTouchEfiVariables = true;
     grub = {
       enable = true;
-      device = "nodev";
-      efiSupport = true;
+      device = "/dev/sda";
       useOSProber = false;
     };
   };
@@ -27,7 +29,21 @@
   networking.hostName = "rattlesnake"; # Change your hostname.
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    interfaces = {
+      ens18.ipv4 = {
+        addresses = [{
+          address = "45.147.97.34";
+          prefixLength = 24;
+        }];
+      };
+    };
+    defaultGateway = {
+      address = "45.147.97.1";
+      interface = "ens18";
+    };
+    nameservers = [ "45.155.168.2" "45.155.168.3" ];
+  };
 
   nix.settings = {
     # Enable flake support
@@ -35,6 +51,14 @@
     # Optimise store
     auto-optimise-store = true;
   };
+
+  services.syncthing = {
+    enable = true;
+    user = "antoine";
+    dataDir = "/home/antoine";
+    configDir = "/home/antoine/.config/syncthing";
+  };
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
