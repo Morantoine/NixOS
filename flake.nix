@@ -38,6 +38,10 @@
     };
     nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -47,6 +51,7 @@
     , spicetify-nix
     , home-manager
     , hyprland-contrib
+    , sops-nix
     , ...
     }: {
       nixosConfigurations = {
@@ -58,6 +63,7 @@
           modules = [
 
             ./hosts/balrog
+            sops-nix.nixosModules.sops
 
             # Load Home Manager
             home-manager.nixosModules.home-manager
@@ -81,6 +87,7 @@
           modules = [
 
             ./hosts/rattlesnake
+            sops-nix.nixosModules.sops
 
             # Load Home Manager
             home-manager.nixosModules.home-manager

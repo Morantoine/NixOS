@@ -1,0 +1,12 @@
+keys:
+  - &admin_antoine C9BB0E3CE9F8C38ED3CC950D30CE7F957BD7DA57
+  - &host_balrog age1vphrl283dssjf6dznkcl9s0gwmgvgnu8mucyd786eq8yaqlknfdslcyr60
+  - &host_rattlesnake age1rncyyd5qneqrt4f8exsyzwqulwaj2pyu3tfjxhlctrc3lfpg6stqe3wrme
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - pgp:
+      - *admin_antoine
+      age:
+      - *host_balrog
+      - *host_rattlesnake
