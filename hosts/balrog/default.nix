@@ -38,6 +38,13 @@
     auto-optimise-store = true;
   };
 
+  services.syncthing = {
+    enable = true;
+    user = "antoine";
+    dataDir = "/home/antoine";
+    configDir = "/home/antoine/.config/syncthing";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
