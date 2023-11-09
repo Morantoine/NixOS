@@ -52,6 +52,9 @@ in
 
     # Pyprland
     (python310.withPackages my-python-packages)
+
+    # Audio visualizer
+    cavalier
   ];
 
   # Enable bluetooth buttons support
