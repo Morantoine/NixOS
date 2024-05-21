@@ -1,6 +1,6 @@
 return {
-	"szw/vim-maximizer",
-	keys = {
-		{ "<leader>m", "<cmd>MaximizerToggle<CR>" },
-	},
+  "szw/vim-maximizer",
+  keys = {
+    { "<leader>bm", "<cmd>MaximizerToggle<CR>", desc = "Maximize Buffer", },
+  },
 }
