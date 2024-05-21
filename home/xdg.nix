@@ -33,11 +33,6 @@ in
     enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";
 
-    mimeApps = {
-      enable = true;
-      defaultApplications = associations;
-    };
-
     userDirs = {
       enable = false;
       createDirectories = false;
