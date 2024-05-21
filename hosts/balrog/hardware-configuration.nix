@@ -36,6 +36,11 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+    # Enable networking
+  networking = {
+    nameservers = [ "1.1.1.1" "9.9.9.9" ];
+  };
+
   # networking.interfaces.enp0s20f0u4.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp8s0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
