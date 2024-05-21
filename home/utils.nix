@@ -14,7 +14,9 @@
     evince
     vlc
     neofetch
-    gotop
+    tty-clock
+    btop
+    vis
 
     # misc
     xdg-utils
@@ -23,6 +25,7 @@
     emote
 
     qbittorrent
+    filezilla
   ];
 
   programs.bat = {
