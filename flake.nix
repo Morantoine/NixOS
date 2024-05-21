@@ -36,9 +36,6 @@
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Neovim-nightly
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    nixpkgs-staging.url = "github:nixos/nixpkgs/staging";
     # XP-bot on Rattlesnake
     xp-bot = {
       url = "github:Morantoine/XP_Bot";
@@ -58,7 +55,6 @@
     , spicetify-nix
     , home-manager
     , hyprland-contrib
-    , neovim-nightly-overlay
     , xp-bot
     , sops-nix
     , ...
@@ -77,8 +73,6 @@
             # Load Home Manager
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
-
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
@@ -101,8 +95,6 @@
             # Load Home Manager
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.overlays = [ inputs.neovim-nightly-overlay.overlay ];
-
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
