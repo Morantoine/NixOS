@@ -256,7 +256,7 @@ exec --no-startup-id ~/.screenlayout/monitor.sh
 
 # set wallpaper
 # exec --no-startup-id sleep 2 && nitrogen --restore
-exec --no-startup-id sleep 1 && feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill --no-xinerma ~/.config/i3/wallpaper.jpg
 
 # Desktop notifications
 exec --no-startup-id /usr/bin/dunst
