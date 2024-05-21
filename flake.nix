@@ -25,7 +25,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     # Spicetify flake for Nix integration
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
