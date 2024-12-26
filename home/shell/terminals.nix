@@ -16,6 +16,7 @@ in
       confirm_os_window_close = 0;
       placement_strategy = "top-left";
       text_composition_strategy = "legacy";
+      enable_audio_bell = "no";
     };
     theme = "Ayu";
   };

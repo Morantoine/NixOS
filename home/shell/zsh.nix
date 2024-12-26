@@ -15,7 +15,7 @@
       la = "eza --icons -la";
       tree = "eza --tree";
       rg = "source ranger";
-      clock = "tty-clock -sc";
+      clock = "tty-clock -c";
     };
     history = {
       # path = "${config.home.homeDirectory}/.zshistory";
