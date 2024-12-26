@@ -18,8 +18,7 @@ in
     # messaging
     signal-desktop
     telegram-desktop
-    discord
-    krisp_patch
+    webcord
   ];
 
 }

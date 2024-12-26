@@ -3,6 +3,8 @@
 {
 
   imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+
     # Use Hyprland as DE
     ../../home/environments/hyprland
     ../../home/gtk.nix
@@ -22,6 +24,7 @@
     ../../home/shell
     ../../home/security.nix
     ../../home/ssh.nix
+    ../../home/productivity.nix
   ];
 
   # Change your username ! 

@@ -31,6 +31,8 @@ exec-once =	wl-clip-persist --clipboard both
 # Some default env vars.
 # env = XCURSOR_SIZE,24
 env = WLR_NO_HARDWARE_CURSORS,1
+env = HYPRCURSOR_THEME,Anything
+env = HYPRCURSOR_SIZE,24
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
@@ -74,17 +76,21 @@ decoration {
     # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
     rounding = 10
+
     blur {
 		enabled = true
     	size = 3
     	passes = 1
     	new_optimizations = on
-	}
+    }
 
-    drop_shadow = yes
-    shadow_range = 4
-    shadow_render_power = 3
-    col.shadow = rgba(1a1a1aee)
+    shadow {
+        enabled = true
+        range = 4
+        render_power = 3
+        color = rgba(1a1a1aee)
+    }
+
 }
 
 group {
@@ -124,7 +130,7 @@ dwindle {
 
 master {
     # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-    new_is_master = true
+    new_status = master
 }
 
 gestures {
@@ -216,7 +222,7 @@ bind = $mainMod SHIFT, 8, movetoworkspace, 8
 bind = $mainMod SHIFT, 9, movetoworkspace, 9
 bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
-# Scroll through existing workspaces with mainMod + scroll
+# Scroll through existing workspaces with mainMod + Tab
 bind = $mainMod, Tab, workspace, e+1
 
 # Move/resize windows with keyboard
@@ -239,7 +245,7 @@ bind = $mainMod SHIFT, x, movecurrentworkspacetomonitor, +1
 
 # Screenshots
 bind = , Print, exec, grimblast --notify copy
-bind = SHIFT, Print, exec, grimblast --notify copy
+bind = SHIFT, Print, exec, grimblast --notify save
 bind = CTRL, Print, exec, grimblast --notify --freeze copy area
 bind = CTRL SHIFT, Print, exec, grimblast --notify --freeze save area
 

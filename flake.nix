@@ -26,9 +26,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
     # Spicetify flake for Nix integration
     spicetify-nix = {
-      url = "github:the-argus/spicetify-nix";
+      url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Hyprland utils
@@ -41,10 +45,18 @@
       url = "github:Morantoine/XP_Bot";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    umu= {
+      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Sops-Nix for secrets managing
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # Catppuccin for obvious reasons
+    catppuccin = {
+      url = "github:catppuccin/nix";
     };
   };
 
@@ -57,6 +69,7 @@
     , hyprland-contrib
     , xp-bot
     , sops-nix
+    , catppuccin
     , ...
     }: {
       nixosConfigurations = {
@@ -67,7 +80,9 @@
           # Load configuration
           modules = [
 
+            ./overlays
             ./hosts/balrog
+            catppuccin.nixosModules.catppuccin
             sops-nix.nixosModules.sops
 
             # Load Home Manager

@@ -26,10 +26,14 @@
     };
   };
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "ntfs" ];
+
   networking.hostName = "balrog"; # Change your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.enableIPv6 = false;
 
   nix.settings = {
     # Enable flake support
@@ -44,6 +48,9 @@
     dataDir = "/home/antoine";
     configDir = "/home/antoine/.config/syncthing";
   };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

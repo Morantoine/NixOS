@@ -6,6 +6,7 @@
   hardware = {
     opengl.enable = true;
     nvidia = {
+      open = false;
       modesetting.enable = true;
       nvidiaSettings = true;
       forceFullCompositionPipeline = true;
@@ -37,18 +38,25 @@
     });
   };
 
+  services.gvfs.enable = true;
+
   environment.systemPackages = with pkgs; [
     swaybg
     mako
+    ags
+    libdbusmenu-gtk3
     libnotify
     swaylock
     wl-clipboard
+    clipnotify
     wl-clip-persist
     # Pulseaudio to expose pactl
     pulseaudio
     wireplumber
     xwaylandvideobridge
-    gnome.seahorse
+    seahorse
+    gnome-bluetooth
+    hyprwayland-scanner
   ];
 
   # Fix locking problem
