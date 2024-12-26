@@ -13,8 +13,12 @@
     imv
     # video
     vlc
+    jellyfin-media-player
     # ebooks
     calibre
+    ryujinx
+    dolphin
+    kdePackages.qtwayland
   ];
 
 }
